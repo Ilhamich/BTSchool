@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTSchool.WebAPI", "BTSchoolWebApp\BTSchool.WebAPI.csproj", "{7AF798EE-5149-4185-B59F-516E91030702}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTSchool.WebApp", "BTSchoolWebApp\BTSchool.WebApp.csproj", "{7AF798EE-5149-4185-B59F-516E91030702}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTSchool.Data", "BTSchool.Data\BTSchool.Data.csproj", "{8443B587-5A19-4BE8-A322-558FB003B981}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BTSchool.Core", "BTSchool.Core\BTSchool.Core.csproj", "{99D2FBD2-47A7-4256-BB3E-1E65561AB91F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		{8443B587-5A19-4BE8-A322-558FB003B981}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8443B587-5A19-4BE8-A322-558FB003B981}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8443B587-5A19-4BE8-A322-558FB003B981}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99D2FBD2-47A7-4256-BB3E-1E65561AB91F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99D2FBD2-47A7-4256-BB3E-1E65561AB91F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99D2FBD2-47A7-4256-BB3E-1E65561AB91F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99D2FBD2-47A7-4256-BB3E-1E65561AB91F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

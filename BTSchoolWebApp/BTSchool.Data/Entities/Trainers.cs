@@ -1,0 +1,22 @@
+﻿using System.Collections.Generic;
+
+namespace BTSchool.Data.Entities
+{
+    public partial class Trainers
+    {
+        public Trainers()
+        {
+            Lessons = new HashSet<Lessons>();
+            TrainersOfCourses = new HashSet<TrainersOfCourses>();
+            TrainersOfGroups = new HashSet<TrainersOfGroups>();
+        }
+
+        public long Id { get; set; }
+        public long? AccountId { get; set; }
+
+        public virtual Accounts Account { get; set; }
+        public virtual ICollection<Lessons> Lessons { get; set; }
+        public virtual ICollection<TrainersOfCourses> TrainersOfCourses { get; set; }
+        public virtual ICollection<TrainersOfGroups> TrainersOfGroups { get; set; }
+    }
+}

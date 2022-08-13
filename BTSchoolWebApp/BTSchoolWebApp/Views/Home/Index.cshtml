@@ -1,0 +1,19 @@
+﻿@using System.IO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>@Directory.GetCurrentDirectory()</p>
+    @*<p>@ViewBag.IP</p>*@
+    <a href="Introduction.pdf" download>Load</a>
+</body>
+</html>

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 using BTSchool.Data;
 
-namespace BTSchool.WebAPI
+namespace BTSchool.WebApp
 {
     public class DependenciesRoot
     {
@@ -13,7 +13,7 @@ namespace BTSchool.WebAPI
             services.AddDbContext<AppContext>(option =>
             {
                 option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")
-                    , optionBuilder => optionBuilder.MigrationsAssembly("TanyaSchool.WebApp"));
+                    , optionBuilder => optionBuilder.MigrationsAssembly("BTSchool.WebApp"));
             });
         }
     }

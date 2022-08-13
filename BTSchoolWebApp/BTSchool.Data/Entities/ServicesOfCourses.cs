@@ -1,0 +1,12 @@
+﻿namespace BTSchool.Data.Entities
+{
+    public partial class ServicesOfCourses
+    {
+        public long Id { get; set; }
+        public long CourseId { get; set; }
+        public long ServiceId { get; set; }
+
+        public virtual Courses Course { get; set; }
+        public virtual Services Service { get; set; }
+    }
+}

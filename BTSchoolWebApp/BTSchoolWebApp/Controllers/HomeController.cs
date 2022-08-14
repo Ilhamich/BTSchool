@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-using BTSchool.Core.Entities;
+using BTSchool.Data.Entities;
 
 namespace BTSchool.WebApp.Controllers
 {

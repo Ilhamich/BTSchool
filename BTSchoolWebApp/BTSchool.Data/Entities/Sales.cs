@@ -2,9 +2,8 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Sales
+    public partial class Sales : BaseEntity
     {
-        public long Id { get; set; }
         public DateTime Data { get; set; }
         public long CustomerId { get; set; }
         public long ProductId { get; set; }

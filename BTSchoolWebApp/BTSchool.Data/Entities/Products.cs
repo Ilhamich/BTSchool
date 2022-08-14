@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Products
+    public partial class Products : BaseEntity
     {
         public Products()
         {
@@ -10,7 +10,6 @@ namespace BTSchool.Data.Entities
             Sales = new HashSet<Sales>();
         }
 
-        public long Id { get; set; }
         public string ProductType { get; set; }
         public string Brend { get; set; }
         public string Name { get; set; }

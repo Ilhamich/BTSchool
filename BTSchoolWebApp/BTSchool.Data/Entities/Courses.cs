@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Courses
+    public partial class Courses : BaseEntity
     {
         public Courses()
         {
@@ -11,7 +11,6 @@ namespace BTSchool.Data.Entities
             TrainersOfCourses = new HashSet<TrainersOfCourses>();
         }
 
-        public long Id { get; set; }
         public bool? IsActive { get; set; }
         public long ProductId { get; set; }
 

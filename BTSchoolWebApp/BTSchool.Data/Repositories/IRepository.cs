@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using BTSchool.Data.Entities;
 
-using BTSchool.Core.Entities;
-
-namespace BTSchool.Data.Repositories.Interfaces
+namespace BTSchool.Data.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {

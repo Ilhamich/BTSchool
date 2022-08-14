@@ -1,8 +1,7 @@
 ﻿namespace BTSchool.Data.Entities
 {
-    public partial class StudentsOfGroups
+    public partial class StudentsOfGroups : BaseEntity
     {
-        public long Id { get; set; }
         public long GroupId { get; set; }
         public long StudentId { get; set; }
 

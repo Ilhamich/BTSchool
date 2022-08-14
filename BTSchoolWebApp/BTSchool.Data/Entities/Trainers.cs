@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Trainers
+    public partial class Trainers : BaseEntity
     {
         public Trainers()
         {
@@ -11,7 +11,6 @@ namespace BTSchool.Data.Entities
             TrainersOfGroups = new HashSet<TrainersOfGroups>();
         }
 
-        public long Id { get; set; }
         public long? AccountId { get; set; }
 
         public virtual Accounts Account { get; set; }

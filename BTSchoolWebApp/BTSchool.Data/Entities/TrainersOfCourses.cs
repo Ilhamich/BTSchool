@@ -1,8 +1,7 @@
 ﻿namespace BTSchool.Data.Entities
 {
-    public partial class TrainersOfCourses
+    public partial class TrainersOfCourses : BaseEntity
     {
-        public long Id { get; set; }
         public long TrainerId { get; set; }
         public long CourseId { get; set; }
 

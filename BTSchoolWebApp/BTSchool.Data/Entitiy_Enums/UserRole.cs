@@ -1,6 +1,6 @@
-﻿namespace BTSchool.Data.Old_Entities
+﻿namespace BTSchool.Data.Entity_Enums
 {
-    public enum UserRole
+    public enum UserRole : byte
     {
         NotAssigned = 0,
         Customer = 1,

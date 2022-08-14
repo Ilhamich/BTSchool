@@ -2,14 +2,13 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Customers
+    public partial class Customers : BaseEntity
     {
         public Customers()
         {
             Sales = new HashSet<Sales>();
         }
 
-        public long Id { get; set; }
         public long AccountId { get; set; }
 
         public virtual Accounts Account { get; set; }

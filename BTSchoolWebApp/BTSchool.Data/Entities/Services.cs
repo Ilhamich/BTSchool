@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Services
+    public partial class Services : BaseEntity
     {
         public Services()
         {
             ServicesOfCourses = new HashSet<ServicesOfCourses>();
         }
 
-        public long Id { get; set; }
         public string Name { get; set; }
         public byte? ServiceLevel { get; set; }
         public TimeSpan? Time { get; set; }

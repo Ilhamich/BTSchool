@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-
-using BTSchool.Core.Entities;
+using BTSchool.Data.Entities;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {

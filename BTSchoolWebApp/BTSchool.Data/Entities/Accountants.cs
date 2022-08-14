@@ -1,8 +1,7 @@
 ﻿namespace BTSchool.Data.Entities
 {
-    public partial class Accountants
+    public partial class Accountants : BaseEntity
     {
-        public long Id { get; set; }
         public long AccountId { get; set; }
 
         public virtual Accounts Account { get; set; }

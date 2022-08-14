@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Groups
+    public partial class Groups : BaseEntity
     {
         public Groups()
         {
@@ -12,7 +12,6 @@ namespace BTSchool.Data.Entities
             TrainersOfGroups = new HashSet<TrainersOfGroups>();
         }
 
-        public long Id { get; set; }
         public long CourseId { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }

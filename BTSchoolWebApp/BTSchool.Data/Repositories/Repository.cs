@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
+using BTSchool.Data.Entities;
 
 namespace BTSchool.Data.Repositories
 {

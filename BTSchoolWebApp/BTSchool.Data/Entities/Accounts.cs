@@ -2,9 +2,8 @@
 
 namespace BTSchool.Data.Entities
 {
-    public partial class Accounts
+    public partial class Accounts : BaseEntity
     {
-        public long Id { get; set; }
         public byte? Role { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

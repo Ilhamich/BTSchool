@@ -10,7 +10,7 @@ namespace BTSchool.WebApp.Controllers
         // GET: HomeController
         public ActionResult Index()
         {
-            var account = new Account();
+            var account = new Accounts();
             account.Id = 1;
             account.FirstName = "Aidyn";
             account.LastName = "Huliiev";

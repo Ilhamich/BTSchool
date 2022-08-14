@@ -1,8 +1,13 @@
 ﻿using BTSchool.Data.Entities;
+using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class LessonRepository : Repository<Lessons>
+    internal class LessonRepository : Repository<Lessons>, ILessonRepository
     {
+        public LessonRepository(AppContext context)
+            : base(context)
+        {
+        }
     }
 }

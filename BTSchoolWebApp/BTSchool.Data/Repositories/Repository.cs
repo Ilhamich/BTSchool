@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using BTSchool.Data.Entities;
 
 namespace BTSchool.Data.Repositories
@@ -10,6 +11,12 @@ namespace BTSchool.Data.Repositories
     {
         protected readonly AppContext _appContext;
         private DbSet<T> _entity;
+
+        public Repository(AppContext appContext)
+        {
+            _appContext = appContext;
+            _entity = _appContext.Set<T>();
+        }
 
         public async Task AddAsync(T entity)
         {

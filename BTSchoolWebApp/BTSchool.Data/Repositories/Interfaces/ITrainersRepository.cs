@@ -1,6 +1,6 @@
 ﻿namespace BTSchool.Data.Repositories.Interfaces
 {
-    internal interface ITrainersRepository
+    public interface ITrainersRepository
     {
     }
 }

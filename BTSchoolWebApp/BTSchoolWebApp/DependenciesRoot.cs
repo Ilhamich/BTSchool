@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 
 using BTSchool.Data;
+using BTSchool.Data.Repositories;
 
 namespace BTSchool.WebApp
 {
@@ -15,6 +16,10 @@ namespace BTSchool.WebApp
                 option.UseSqlServer(configuration.GetConnectionString("DefaultConnection")
                     , optionBuilder => optionBuilder.MigrationsAssembly("BTSchool.WebApp"));
             });
+
+            services.AddMvc();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace BTSchool.Data.Repositories.Interfaces
 {
-    internal interface IStudentsOfGroupsRepository
+    public interface IStudentsOfGroupsRepository
     {
     }
 }

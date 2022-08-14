@@ -1,6 +1,6 @@
 ﻿namespace BTSchool.Data.Repositories.Interfaces
 {
-    internal interface IServiceRepository
+    public interface IServiceRepository
     {
     }
 }

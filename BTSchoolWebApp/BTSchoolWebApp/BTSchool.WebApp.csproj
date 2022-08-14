@@ -14,9 +14,5 @@
     <ProjectReference Include="..\BTSchool.Data\BTSchool.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 
 </Project>

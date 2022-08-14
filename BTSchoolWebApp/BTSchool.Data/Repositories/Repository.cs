@@ -54,22 +54,22 @@ namespace BTSchool.Data.Repositories
 
         public async Task<bool> IsEntityExistAsync(long id)
         {
-            throw new System.NotImplementedException();
+            return await _entity.AnyAsync(entity => entity.Id == id);
         }
 
         public async Task RemoveRangeAsync(IEnumerable<T> entities)
         {
-            throw new System.NotImplementedException();
+           await Task.Run(() =>_entity.RemoveRange(entities));
         }
 
         public async Task UpdateAsync(T entity)
         {
-            throw new System.NotImplementedException();
+            await Task.Run(() => _entity.Update(entity));
         }
 
         public async Task UpdateRangeAsync(IEnumerable<T> entities)
         {
-            throw new System.NotImplementedException();
+            await Task.Run(() => _entity.UpdateRange(entities));
         }
     }
 }

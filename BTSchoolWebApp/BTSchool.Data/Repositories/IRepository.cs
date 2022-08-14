@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using BTSchool.Data.Entities;
 
-namespace BTSchool.Data.Repositories.Interfaces
+namespace BTSchool.Data.Repositories
 {
     public interface IRepository<T> where T : BaseEntity
     {

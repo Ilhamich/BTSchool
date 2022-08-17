@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 using BTSchool.Data;
 using BTSchool.Data.Repositories;
+using BTSchool.Buisness.ServiceInterfaces;
+using BTSchool.Buisness.Services;
 
 namespace BTSchool.WebApp
 {
@@ -20,6 +22,7 @@ namespace BTSchool.WebApp
             services.AddMvc();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IProductService, ProductService>();
         }
     }
 }

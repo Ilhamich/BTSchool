@@ -4,6 +4,12 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+
+using BTSchool.Data;
+using BTSchool.Buisness.ServiceInterfaces;
+using BTSchool.Buisness.Services;
+using BTSchool.Data.Repositories;
 
 namespace BTSchool.WebApp
 {
@@ -19,7 +25,16 @@ namespace BTSchool.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            DependenciesRoot.InjectDependencies(services, Configuration);
+            services.AddDbContext<AppContext>(option =>
+            {
+                option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")
+                    , optionBuilder => optionBuilder.MigrationsAssembly("BTSchool.WebApp"));
+            });
+
+            services.AddMvc();
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IProductService, ProductService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -30,6 +30,8 @@ namespace BTSchool.WebApp
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
@@ -45,7 +47,7 @@ namespace BTSchool.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "Default",
-                    pattern: "{controller}/{action}");
+                    pattern: "{controller=Home}/{action=Index}");          
             });
         }
     }

@@ -11,11 +11,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BTSchool.Bisness\BTSchool.Buisness.csproj" />
     <ProjectReference Include="..\BTSchool.Data\BTSchool.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Folder Include="wwwroot\img\" />
   </ItemGroup>
 
 

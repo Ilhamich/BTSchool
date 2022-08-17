@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BTSchool.Data.Entities;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    internal interface ICourseRepository
+    public interface ICourseRepository : IRepository<Courses>
     {
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace BTSchool.Data.Repositories.Interfaces
+﻿using BTSchool.Data.Entities;
+
+namespace BTSchool.Data.Repositories.Interfaces
 {
-    internal interface IAccountantRepository
+    public interface IAccountantRepository : IRepository<Accountants>
     {
     }
 }

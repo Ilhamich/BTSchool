@@ -1,7 +1,12 @@
-DROP DATABASE IF EXISTS BTSchoolData;
+IF DB_ID('BTSchoolData') IS NOT NULL
+    DROP DATABASE BTSchoolData;
+GO
 
-IF DB_ID('BTSchoolData') IS NULL
-    CREATE DATABASE BTSchoolData;
+--IF EXISTS(SELECT 1 FROM sys.tables WHERE object_id = OBJECT_ID('BTSchoolData'))
+--    DROP DATABASE BTSchoolData;
+--GO
+
+CREATE DATABASE BTSchoolData;
 GO
 
 USE BTSchoolData;
@@ -60,7 +65,7 @@ CREATE TABLE Products(
 	Description       NVARCHAR(30)             NULL,
 
     CONSTRAINT PK_Product_Id                PRIMARY KEY (Id),
-	CONSTRAINT UQ_NameCourses               UNIQUE (Name)
+	CONSTRAINT UQ_NameProduct               UNIQUE (Name)
 	);
 
 -- Table Sales

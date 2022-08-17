@@ -20,8 +20,6 @@ namespace BTSchool.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             DependenciesRoot.InjectDependencies(services, Configuration);
-            services.AddMvc();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,6 +29,8 @@ namespace BTSchool.WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseStaticFiles();
 
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
@@ -47,7 +47,7 @@ namespace BTSchool.WebApp
             {
                 endpoints.MapControllerRoute(
                     name: "Default",
-                    pattern: "{controller}/{action}");
+                    pattern: "{controller=Home}/{action=Index}");          
             });
         }
     }

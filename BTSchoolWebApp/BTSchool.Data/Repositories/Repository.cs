@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 using BTSchool.Data.Entities;
 
 namespace BTSchool.Data.Repositories
@@ -10,6 +11,12 @@ namespace BTSchool.Data.Repositories
     {
         protected readonly AppContext _appContext;
         private DbSet<T> _entity;
+
+        public Repository(AppContext appContext)
+        {
+            _appContext = appContext;
+            _entity = _appContext.Set<T>();
+        }
 
         public async Task AddAsync(T entity)
         {
@@ -28,7 +35,9 @@ namespace BTSchool.Data.Repositories
 
         public async Task<List<T>> GetAllAsync()
         {
-            return await _entity.ToListAsync();
+            var value = await _entity.ToListAsync();
+
+            return value;
         }
 
         public async Task<T> GetByIdAsync(long id)
@@ -47,22 +56,22 @@ namespace BTSchool.Data.Repositories
 
         public async Task<bool> IsEntityExistAsync(long id)
         {
-            throw new System.NotImplementedException();
+            return await _entity.AnyAsync(entity => entity.Id == id);
         }
 
         public async Task RemoveRangeAsync(IEnumerable<T> entities)
         {
-            throw new System.NotImplementedException();
+           await Task.Run(() =>_entity.RemoveRange(entities));
         }
 
         public async Task UpdateAsync(T entity)
         {
-            throw new System.NotImplementedException();
+            await Task.Run(() => _entity.Update(entity));
         }
 
         public async Task UpdateRangeAsync(IEnumerable<T> entities)
         {
-            throw new System.NotImplementedException();
+            await Task.Run(() => _entity.UpdateRange(entities));
         }
     }
 }

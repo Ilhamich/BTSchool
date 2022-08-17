@@ -1,0 +1,33 @@
+﻿@model IList<Products>
+
+@{
+    ViewData["Title"] = "Home";
+}
+<div class="container-md">
+    <table class="table table-hover table-striped-columns">
+        <thead>
+            <tr class="table-primary">
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int lineNumber = 0;
+
+                foreach (var item in Model)
+                {
+                    lineNumber++;
+                    <tr>
+                        <th>@lineNumber</th>
+                        <td>@item.Name</td>
+                        <td>@item.Price</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@*<p>@ViewBag.IP</p>*@

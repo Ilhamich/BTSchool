@@ -35,7 +35,9 @@ namespace BTSchool.Data.Repositories
 
         public async Task<List<T>> GetAllAsync()
         {
-            return await _entity.ToListAsync();
+            var value = await _entity.ToListAsync();
+
+            return value;
         }
 
         public async Task<T> GetByIdAsync(long id)

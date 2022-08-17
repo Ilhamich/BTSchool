@@ -1,6 +1,8 @@
-﻿namespace BTSchool.Data.Repositories.Interfaces
+﻿using BTSchool.Data.Entities;
+
+namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface ITrainersOfCoursesRepository
+    public interface ITrainersOfCoursesRepository : IRepository<TrainersOfCourses>
     {
     }
 }

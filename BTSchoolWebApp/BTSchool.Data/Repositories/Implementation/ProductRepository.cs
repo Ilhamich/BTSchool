@@ -8,7 +8,6 @@ namespace BTSchool.Data.Repositories.Implementation
         public ProductRepository(AppContext context)
             : base(context)
         {
-
         }
     }
 }

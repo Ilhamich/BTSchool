@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BTSchool.Data.Entities
+namespace BTSchool.Core.Entities
 {
     public partial class Customers : BaseEntity
     {

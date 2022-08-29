@@ -1,4 +1,4 @@
-﻿namespace BTSchool.Data.Entity_Enums
+﻿namespace BTSchool.Core.Entity_Enums
 {
     public enum UserRole : byte
     {

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using BTSchool.Data.Entity_Enums;
+using BTSchool.Core.Entity_Enums;
 
-namespace BTSchool.Data.Entities
+namespace BTSchool.Core.Entities
 {
     public partial class Services : BaseEntity
     {

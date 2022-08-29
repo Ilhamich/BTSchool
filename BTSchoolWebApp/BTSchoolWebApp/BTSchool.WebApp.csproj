@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BTSchool.Bisness\BTSchool.Buisness.csproj" />
-    <ProjectReference Include="..\BTSchool.Data\BTSchool.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,108 @@
+ body {
+    background-color: #EFF5FB;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #2E3B49;
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+.headerNavBar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #EFF5FB;
+    padding-bottom: 3px;
+}
+
+    .headerNavBar div {
+        display: flex;
+        flex-direction: row;
+    }
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    border-right: 1px solid #EFF5FB;
+}
+
+    .navList li {
+        list-style-type: none;
+        padding-right: 8px;
+        padding-left: 8px;
+    }
+
+a {
+    font-size: 22px;
+    color: #EFF5FB;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #A67794;
+    }
+
+h2 {
+    color: #EFF5FB;
+    margin: 0;
+    padding-left: 5px;
+    font-size: xx-large;
+}
+
+    h2 span {
+        color: #A67794;
+    }
+
+main {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+    main dataList {
+        display: flex;
+        width: 80%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+        main dataList div {
+            width: 250px;
+            height: 200px;
+            padding: 0.3%;
+        }
+
+            main dataList div:hover {
+                background-color: #A67794;
+                opacity: 0.7;
+            }
+
+main #loginForm{
+    display: flex;
+    justify-content:center;
+}
+
+#login {
+    height: auto;
+    width: auto;
+    background-color: #A67794;
+    color: #EFF5FB;
+    border: 1px solid #EFF5FB;
+    border-radius: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 5px;
+}
+
+    #login:hover {
+        background-color: #9E6B8B;
+    }

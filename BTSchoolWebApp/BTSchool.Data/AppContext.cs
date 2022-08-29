@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 using BTSchool.Data.Configurations;
 
 namespace BTSchool.Data

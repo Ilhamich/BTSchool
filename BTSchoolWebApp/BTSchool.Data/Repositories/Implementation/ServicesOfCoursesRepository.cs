@@ -1,4 +1,4 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation

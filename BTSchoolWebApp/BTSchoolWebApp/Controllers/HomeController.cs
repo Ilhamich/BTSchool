@@ -11,6 +11,12 @@ namespace BTSchool.WebApp.Controllers
 
         // GET: HomeController
         public async Task<ActionResult> Index()
-            => await Task.Run(() => View());   
+            => await Task.Run(() => View());
+
+        public async Task<ActionResult> FAQs()
+            => await Task.Run(() => View());
+
+        public async Task<ActionResult> About()
+            => await Task.Run(() => View());
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace BTSchool.Data.Entities
+﻿namespace BTSchool.Core.Entities
 {
     public partial class TrainersOfGroups : BaseEntity
     {

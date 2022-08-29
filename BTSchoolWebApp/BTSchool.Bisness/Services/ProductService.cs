@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 using BTSchool.Buisness.ServiceInterfaces;
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories;
 
 namespace BTSchool.Buisness.Services

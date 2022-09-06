@@ -2,15 +2,15 @@
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Themes : BaseEntity
+    public partial class Theme : BaseEntity
     {
-        public Themes()
+        public Theme()
         {
-            Lessons = new HashSet<Lessons>();
+            Lessons = new HashSet<Lesson>();
         }
 
         public string Name { get; set; }
 
-        public virtual ICollection<Lessons> Lessons { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
     }
 }

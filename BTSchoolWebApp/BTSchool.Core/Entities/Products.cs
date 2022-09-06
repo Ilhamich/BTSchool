@@ -2,12 +2,12 @@
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Products : BaseEntity
+    public partial class Product : BaseEntity
     {
-        public Products()
+        public Product()
         {
-            Courses = new HashSet<Courses>();
-            Sales = new HashSet<Sales>();
+            Courses = new HashSet<Course>();
+            Sales = new HashSet<Sale>();
         }
 
         public string ProductType { get; set; }
@@ -16,7 +16,7 @@ namespace BTSchool.Core.Entities
         public decimal Price { get; set; }
         public string Description { get; set; }
 
-        public virtual ICollection<Courses> Courses { get; set; }
-        public virtual ICollection<Sales> Sales { get; set; }
+        public virtual ICollection<Course> Courses { get; set; }
+        public virtual ICollection<Sale> Sales { get; set; }
     }
 }

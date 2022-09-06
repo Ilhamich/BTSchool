@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class TrainersOfCoursesRepository : Repository<TrainersOfCourses>, ITrainersOfCoursesRepository
+    internal class TrainersOfCoursesRepository : Repository<TrainerOfCourse>, ITrainersOfCoursesRepository
     {
-        public TrainersOfCoursesRepository(AppContext context)
+        public TrainersOfCoursesRepository(BTSDataContext context)
             : base(context)
         {
         }

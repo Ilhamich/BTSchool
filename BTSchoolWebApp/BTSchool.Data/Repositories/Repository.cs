@@ -9,10 +9,10 @@ namespace BTSchool.Data.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        protected readonly AppContext _appContext;
+        protected readonly BTSDataContext _appContext;
         private DbSet<T> _entity;
 
-        public Repository(AppContext appContext)
+        public Repository(BTSDataContext appContext)
         {
             _appContext = appContext;
             _entity = _appContext.Set<T>();

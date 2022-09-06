@@ -1,11 +1,11 @@
 ﻿namespace BTSchool.Core.Entities
 {
-    public partial class TrainersOfGroups : BaseEntity
+    public partial class TrainerOfGroup : BaseEntity
     {
         public long TrainerId { get; set; }
         public long GroupId { get; set; }
 
-        public virtual Groups Group { get; set; }
-        public virtual Trainers Trainer { get; set; }
+        public virtual Group Group { get; set; }
+        public virtual Trainer Trainer { get; set; }
     }
 }

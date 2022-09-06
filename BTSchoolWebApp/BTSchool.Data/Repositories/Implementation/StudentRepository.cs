@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class StudentRepository : Repository<Students>, IStudentRepository
+    internal class StudentRepository : Repository<Student>, IStudentRepository
     {
-        public StudentRepository(AppContext context)
+        public StudentRepository(BTSDataContext context)
             : base(context)
         {
         }

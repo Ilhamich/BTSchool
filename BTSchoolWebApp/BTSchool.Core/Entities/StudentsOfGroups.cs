@@ -1,11 +1,11 @@
 ﻿namespace BTSchool.Core.Entities
 {
-    public partial class StudentsOfGroups : BaseEntity
+    public partial class StudentOfGroup : BaseEntity
     {
         public long GroupId { get; set; }
         public long StudentId { get; set; }
 
-        public virtual Groups Group { get; set; }
-        public virtual Students Student { get; set; }
+        public virtual Group Group { get; set; }
+        public virtual Student Student { get; set; }
     }
 }

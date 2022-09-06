@@ -2,20 +2,20 @@
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Trainers : BaseEntity
+    public partial class Trainer : BaseEntity
     {
-        public Trainers()
+        public Trainer()
         {
-            Lessons = new HashSet<Lessons>();
-            TrainersOfCourses = new HashSet<TrainersOfCourses>();
-            TrainersOfGroups = new HashSet<TrainersOfGroups>();
+            Lessons = new HashSet<Lesson>();
+            TrainersOfCourses = new HashSet<TrainerOfCourse>();
+            TrainersOfGroups = new HashSet<TrainerOfGroup>();
         }
 
         public long? AccountId { get; set; }
 
-        public virtual Accounts Account { get; set; }
-        public virtual ICollection<Lessons> Lessons { get; set; }
-        public virtual ICollection<TrainersOfCourses> TrainersOfCourses { get; set; }
-        public virtual ICollection<TrainersOfGroups> TrainersOfGroups { get; set; }
+        public virtual Account Account { get; set; }
+        public virtual ICollection<Lesson> Lessons { get; set; }
+        public virtual ICollection<TrainerOfCourse> TrainersOfCourses { get; set; }
+        public virtual ICollection<TrainerOfGroup> TrainersOfGroups { get; set; }
     }
 }

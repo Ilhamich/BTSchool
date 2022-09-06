@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface ITrainersOfCoursesRepository : IRepository<TrainersOfCourses>
+    public interface ITrainersOfCoursesRepository : IRepository<TrainerOfCourse>
     {
     }
 }

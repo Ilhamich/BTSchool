@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IGroupRepository : IRepository<Groups>
+    public interface IGroupRepository : IRepository<Group>
     {
     }
 }

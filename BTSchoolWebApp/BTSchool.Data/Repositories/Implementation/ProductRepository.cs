@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class ProductRepository : Repository<Products>, IProductRepository
+    internal class ProductRepository : Repository<Product>, IProductRepository
     {
-        public ProductRepository(AppContext context)
+        public ProductRepository(BTSDataContext context)
             : base(context)
         {
         }

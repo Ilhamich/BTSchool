@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class AccountantRepository : Repository<Accountants>, IAccountantRepository
+    internal class AccountantRepository : Repository<Accountant>, IAccountantRepository
     {
-        public AccountantRepository(AppContext context)
+        public AccountantRepository(BTSDataContext context)
             : base(context)
         {
         }

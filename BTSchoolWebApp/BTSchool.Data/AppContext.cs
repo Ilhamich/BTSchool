@@ -5,28 +5,28 @@ using BTSchool.Data.Configurations;
 
 namespace BTSchool.Data
 {
-    public class AppContext : DbContext
+    public class BTSDataContext : DbContext
     {
-        public AppContext(DbContextOptions<AppContext> options)
+        public BTSDataContext(DbContextOptions<BTSDataContext> options)
             : base(options)
         { }
 
-        public virtual DbSet<Accountants> Accountants { get; set; }
-        public virtual DbSet<Accounts> Accounts { get; set; }
-        public virtual DbSet<Courses> Courses { get; set; }
-        public virtual DbSet<Customers> Customers { get; set; }
-        public virtual DbSet<Groups> Groups { get; set; }
-        public virtual DbSet<Lessons> Lessons { get; set; }
-        public virtual DbSet<Products> Products { get; set; }
-        public virtual DbSet<Sales> Sales { get; set; }
-        public virtual DbSet<Services> Services { get; set; }
-        public virtual DbSet<ServicesOfCourses> ServicesOfCourses { get; set; }
-        public virtual DbSet<Students> Students { get; set; }
-        public virtual DbSet<StudentsOfGroups> StudentsOfGroups { get; set; }
-        public virtual DbSet<Themes> Themes { get; set; }
-        public virtual DbSet<Trainers> Trainers { get; set; }
-        public virtual DbSet<TrainersOfCourses> TrainersOfCourses { get; set; }
-        public virtual DbSet<TrainersOfGroups> TrainersOfGroups { get; set; }
+        public virtual DbSet<Accountant> Accountants { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Course> Courses { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
+        public virtual DbSet<Group> Groups { get; set; }
+        public virtual DbSet<Lesson> Lessons { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Sale> Sales { get; set; }
+        public virtual DbSet<Service> Services { get; set; }
+        public virtual DbSet<ServiceOfCourse> ServicesOfCourses { get; set; }
+        public virtual DbSet<Student> Students { get; set; }
+        public virtual DbSet<StudentOfGroup> StudentsOfGroups { get; set; }
+        public virtual DbSet<Theme> Themes { get; set; }
+        public virtual DbSet<Trainer> Trainers { get; set; }
+        public virtual DbSet<TrainerOfCourse> TrainersOfCourses { get; set; }
+        public virtual DbSet<TrainerOfGroup> TrainersOfGroups { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

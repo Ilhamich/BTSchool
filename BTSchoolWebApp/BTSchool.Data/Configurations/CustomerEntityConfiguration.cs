@@ -5,9 +5,9 @@ using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class CustomerEntityConfiguration : IEntityTypeConfiguration<Customers>
+    internal class CustomerEntityConfiguration : IEntityTypeConfiguration<Customer>
     {
-        public void Configure(EntityTypeBuilder<Customers> entity)
+        public void Configure(EntityTypeBuilder<Customer> entity)
         {
             entity.HasIndex(e => e.AccountId)
                     .HasName("UQ_AccountCustomers")
@@ -15,7 +15,7 @@ namespace BTSchool.Data.Configurations
 
             entity.HasOne(d => d.Account)
                 .WithOne(p => p.Customers)
-                .HasForeignKey<Customers>(d => d.AccountId)
+                .HasForeignKey<Customer>(d => d.AccountId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_AccountCustomers");
         }

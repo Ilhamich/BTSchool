@@ -5,11 +5,11 @@ using BTSchool.Core.Entity_Enums;
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Services : BaseEntity
+    public partial class Service : BaseEntity
     {
-        public Services()
+        public Service()
         {
-            ServicesOfCourses = new HashSet<ServicesOfCourses>();
+            ServicesOfCourses = new HashSet<ServiceOfCourse>();
         }
 
         public string Name { get; set; }
@@ -17,6 +17,6 @@ namespace BTSchool.Core.Entities
         public TimeSpan? Time { get; set; }
         public decimal? Price { get; set; }
 
-        public virtual ICollection<ServicesOfCourses> ServicesOfCourses { get; set; }
+        public virtual ICollection<ServiceOfCourse> ServicesOfCourses { get; set; }
     }
 }

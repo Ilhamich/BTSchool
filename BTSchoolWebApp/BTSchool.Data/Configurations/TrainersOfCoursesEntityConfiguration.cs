@@ -5,9 +5,9 @@ using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class TrainersOfCoursesEntityConfiguration : IEntityTypeConfiguration<TrainersOfCourses>
+    internal class TrainersOfCoursesEntityConfiguration : IEntityTypeConfiguration<TrainerOfCourse>
     {
-        public void Configure(EntityTypeBuilder<TrainersOfCourses> entity) 
+        public void Configure(EntityTypeBuilder<TrainerOfCourse> entity) 
         {
             entity.HasIndex(e => new { e.TrainerId, e.CourseId })
                    .HasName("UQ_TrainerAndCourse")

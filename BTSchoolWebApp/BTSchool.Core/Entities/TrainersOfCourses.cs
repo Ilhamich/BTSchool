@@ -1,11 +1,11 @@
 ﻿namespace BTSchool.Core.Entities
 {
-    public partial class TrainersOfCourses : BaseEntity
+    public partial class TrainerOfCourse : BaseEntity
     {
         public long TrainerId { get; set; }
         public long CourseId { get; set; }
 
-        public virtual Courses Course { get; set; }
-        public virtual Trainers Trainer { get; set; }
+        public virtual Course Course { get; set; }
+        public virtual Trainer Trainer { get; set; }
     }
 }

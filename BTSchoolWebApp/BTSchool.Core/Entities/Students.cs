@@ -2,16 +2,16 @@
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Students : BaseEntity
+    public partial class Student : BaseEntity
     {
-        public Students()
+        public Student()
         {
-            StudentsOfGroups = new HashSet<StudentsOfGroups>();
+            StudentsOfGroups = new HashSet<StudentOfGroup>();
         }
 
         public long AccountId { get; set; }
 
-        public virtual Accounts Account { get; set; }
-        public virtual ICollection<StudentsOfGroups> StudentsOfGroups { get; set; }
+        public virtual Account Account { get; set; }
+        public virtual ICollection<StudentOfGroup> StudentsOfGroups { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IServiceRepository : IRepository<Services>
+    public interface IServiceRepository : IRepository<Service>
     {
     }
 }

@@ -4,7 +4,7 @@ using BTSchool.Core.Entity_Enums;
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Accounts : BaseEntity
+    public partial class Account : BaseEntity
     {
         public UserRole? Role { get; set; } //= UserRole.NotAssigned
         public string FirstName { get; set; }
@@ -15,9 +15,9 @@ namespace BTSchool.Core.Entities
         public string PhoneNumber { get; set; }
         public bool? IsActive { get; set; }
 
-        public virtual Accountants Accountants { get; set; }
-        public virtual Customers Customers { get; set; }
-        public virtual Students Students { get; set; }
-        public virtual Trainers Trainers { get; set; }
+        public virtual Accountant Accountants { get; set; }
+        public virtual Customer Customers { get; set; }
+        public virtual Student Students { get; set; }
+        public virtual Trainer Trainers { get; set; }
     }
 }

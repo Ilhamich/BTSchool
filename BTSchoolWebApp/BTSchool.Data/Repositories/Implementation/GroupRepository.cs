@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class GroupRepository : Repository<Groups>, IGroupRepository
+    internal class GroupRepository : Repository<Group>, IGroupRepository
     {
-        public GroupRepository(AppContext context)
+        public GroupRepository(BTSDataContext context)
             : base(context)
         {
         }

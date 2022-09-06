@@ -4,8 +4,10 @@ using System.Threading.Tasks;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IAccountRepository : IRepository<Accounts>
+    public interface IAccountRepository : IRepository<Account>
     {
-        Task<Accounts> GetAccountByCredentialsAsync(LoginModel login);
+        Task<Account> GetAccountByCredentialsAsync(AccountCredential login);
+
+        Task<bool> IsAccountExist(string email);
     }
 }

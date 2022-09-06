@@ -4,9 +4,9 @@ using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class ThemeRepository : Repository<Themes>, IThemeRepository
+    internal class ThemeRepository : Repository<Theme>, IThemeRepository
     {
-        public ThemeRepository(AppContext context)
+        public ThemeRepository(BTSDataContext context)
             : base(context)
         {
         }

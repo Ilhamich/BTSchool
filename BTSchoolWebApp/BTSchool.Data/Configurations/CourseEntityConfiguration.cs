@@ -5,9 +5,9 @@ using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class CourseEntityConfiguration : IEntityTypeConfiguration<Courses>
+    internal class CourseEntityConfiguration : IEntityTypeConfiguration<Course>
     {
-        public void Configure(EntityTypeBuilder<Courses> entity)
+        public void Configure(EntityTypeBuilder<Course> entity)
         {
             entity.Property(e => e.Id).HasColumnName("ID");
 

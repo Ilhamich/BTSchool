@@ -2,21 +2,21 @@
 
 namespace BTSchool.Core.Entities
 {
-    public partial class Courses : BaseEntity
+    public partial class Course : BaseEntity
     {
-        public Courses()
+        public Course()
         {
-            Groups = new HashSet<Groups>();
-            ServicesOfCourses = new HashSet<ServicesOfCourses>();
-            TrainersOfCourses = new HashSet<TrainersOfCourses>();
+            Groups = new HashSet<Group>();
+            ServicesOfCourses = new HashSet<ServiceOfCourse>();
+            TrainersOfCourses = new HashSet<TrainerOfCourse>();
         }
 
         public bool? IsActive { get; set; }
         public long ProductId { get; set; }
 
-        public virtual Products Product { get; set; }
-        public virtual ICollection<Groups> Groups { get; set; }
-        public virtual ICollection<ServicesOfCourses> ServicesOfCourses { get; set; }
-        public virtual ICollection<TrainersOfCourses> TrainersOfCourses { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
+        public virtual ICollection<ServiceOfCourse> ServicesOfCourses { get; set; }
+        public virtual ICollection<TrainerOfCourse> TrainersOfCourses { get; set; }
     }
 }

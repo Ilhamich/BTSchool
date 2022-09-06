@@ -1,4 +1,5 @@
-﻿using BTSchool.Core.DTOs;
+﻿using BTSchool.Core.BindingModels;
+
 using BTSchool.Core.Entities;
 using System.Threading.Tasks;
 

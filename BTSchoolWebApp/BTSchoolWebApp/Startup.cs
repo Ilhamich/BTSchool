@@ -27,7 +27,7 @@ namespace BTSchool.WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<BTSDataContext>(option =>
+            services.AddDbContext<AppContext>(option =>
             {
                 option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")
                     , optionBuilder => optionBuilder.MigrationsAssembly("BTSchool.WebApp"));

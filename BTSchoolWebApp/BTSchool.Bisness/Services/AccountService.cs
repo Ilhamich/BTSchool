@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 
 using BTSchool.Buisness.ServiceInterfaces;
-using BTSchool.Core.DTOs;
+using BTSchool.Core.BindingModels;
 using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories;
 
@@ -16,7 +16,29 @@ namespace BTSchool.Buisness.Services
             _unitOfWork = unitOfWork;
         }
 
-        public Task<Accounts> GetAccount(LoginModel accountLogin)
-            => _unitOfWork.AccountRepository.GetAccountByCredentialsAsync(accountLogin);     
+        public Task<Account> GetAccountByCredentialsAsync(AccountCredential accountLogin)
+            => _unitOfWork.AccountRepository.GetAccountByCredentialsAsync(accountLogin);
+
+        public async Task<bool> RegisterAccount(AccountRegister register)
+        {
+            if (!await _unitOfWork.AccountRepository.IsAccountExist(register.Email))
+            {
+                var regAccount = new Account()
+                {
+                    FirstName = register.Name,
+                    LastName = register.Email,
+                    Email = register.Email,
+                    Password = register.Password
+                };
+
+                await _unitOfWork.AccountRepository.AddAsync(regAccount);
+
+                await _unitOfWork.CommitAsync();
+
+                return true;
+            }
+
+            return false;
+        }
     }
 }

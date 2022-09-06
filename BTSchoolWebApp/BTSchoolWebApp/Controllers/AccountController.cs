@@ -4,8 +4,9 @@ using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 
-using BTSchool.Core.DTOs;
+using BTSchool.Core.BindingModels;
 using BTSchool.Buisness.ServiceInterfaces;
 
 namespace BTSchool.WebApp.Controllers
@@ -27,20 +28,20 @@ namespace BTSchool.WebApp.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login(LoginModel login)
+        public async Task<IActionResult> Login(AccountCredential login)
         {
             if (ModelState.IsValid)
             {
-                var user = await _accountService.GetAccount(login);
+                var user = await _accountService.GetAccountByCredentialsAsync(login);
 
                 if (user != null)
                 {
-                    await Authenticate(login.Email); // аутентификация
+                    await Authenticate(login.Email);
 
                     return RedirectToAction("Index", "Home");
                 }
 
-                //ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+                ModelState.AddModelError("", "Некорректные логин и(или) пароль");
             }
             return View(login);
         }
@@ -51,28 +52,22 @@ namespace BTSchool.WebApp.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> Register(RegisterModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        User user = await db.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
-        //        if (user == null)
-        //        {
-        //            // добавляем пользователя в бд
-        //            db.Users.Add(new User { Email = model.Email, Password = model.Password });
-        //            await db.SaveChangesAsync();
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(AccountRegister model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (await _accountService.RegisterAccount(model))
+                {
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                    ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+            }
 
-        //            await Authenticate(model.Email); // аутентификация
-
-        //            return RedirectToAction("Index", "Home");
-        //        }
-        //        else
-        //            ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-        //    }
-        //    return View(model);
-        //}
+            return View(model);
+        }
 
         private async Task Authenticate(string userName)
         {
@@ -87,10 +82,16 @@ namespace BTSchool.WebApp.Controllers
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
 
-        //public async Task<IActionResult> Logout()
-        //{
-        //    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-        //    return RedirectToAction("Login", "Account");
-        //}
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "Account");
+        }
+
+        [Authorize]
+        public IActionResult GetAccountEmailTest()
+        {
+            return Content(User.Identity.Name);
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace BTSchool.Buisness.Services
         public ProductService(IUnitOfWork unitOfWork)
             => _unitOfWork = unitOfWork;
         
-        public async Task<IList<Products>> GetAllProductsAsync() 
+        public async Task<IList<Product>> GetAllProductsAsync() 
             => await _unitOfWork.ProductRepository.GetAllAsync();      
     }
 }

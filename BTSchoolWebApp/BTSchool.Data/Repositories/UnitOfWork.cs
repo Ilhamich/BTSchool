@@ -1,13 +1,16 @@
-﻿using BTSchool.Data.Repositories.Implementation;
+﻿using System.Threading.Tasks;
+
+using BTSchool.Data.Repositories.Implementation;
 using BTSchool.Data.Repositories.Interfaces;
-using System.Threading.Tasks;
+using BTSchool.Data.Repositories;
+using BTSchool.Data;
 
 namespace BTSchool.Data.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
         #region private
-        private readonly AppContext _context;
+        private readonly BTSDataContext _context;
         private IAccountRepository _accountRepository;
         private IAccountantRepository _accountantRepository;
         private ICourseRepository _courseRepository;
@@ -26,7 +29,7 @@ namespace BTSchool.Data.Repositories
         private ITrainersRepository _trainersRepository;
         #endregion
 
-        public UnitOfWork(AppContext context)
+        public UnitOfWork(BTSDataContext context)
         {
             _context = context;
         }

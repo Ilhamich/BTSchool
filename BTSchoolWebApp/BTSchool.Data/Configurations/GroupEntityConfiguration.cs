@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class GroupEntityConfiguration : IEntityTypeConfiguration<Groups>
+    internal class GroupEntityConfiguration : IEntityTypeConfiguration<Group>
     {
-        public void Configure(EntityTypeBuilder<Groups> entity)
+        public void Configure(EntityTypeBuilder<Group> entity)
         {
             entity.HasIndex(e => e.Name)
                     .HasName("UQ_NameGroups")

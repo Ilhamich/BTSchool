@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class TrainerEntityConfiguration : IEntityTypeConfiguration<Trainers>
+    internal class TrainerEntityConfiguration : IEntityTypeConfiguration<Trainer>
     {
-        public void Configure(EntityTypeBuilder<Trainers> entity) 
+        public void Configure(EntityTypeBuilder<Trainer> entity) 
         {
             entity.HasIndex(e => e.AccountId)
                     .HasName("UQ_AccountTrainers")
@@ -15,7 +15,7 @@ namespace BTSchool.Data.Configurations
 
             entity.HasOne(d => d.Account)
                 .WithOne(p => p.Trainers)
-                .HasForeignKey<Trainers>(d => d.AccountId)
+                .HasForeignKey<Trainer>(d => d.AccountId)
                 .HasConstraintName("FK_AccountTrainers");
         }
     }

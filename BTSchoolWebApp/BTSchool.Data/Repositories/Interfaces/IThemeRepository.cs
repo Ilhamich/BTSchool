@@ -1,8 +1,8 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IThemeRepository : IRepository<Themes>
+    public interface IThemeRepository : IRepository<Theme>
     {
     }
 }

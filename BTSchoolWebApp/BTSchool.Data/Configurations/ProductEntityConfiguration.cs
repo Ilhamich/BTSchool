@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class ProductEntityConfiguration : IEntityTypeConfiguration<Products>
+    internal class ProductEntityConfiguration : IEntityTypeConfiguration<Product>
     {
-        public void Configure(EntityTypeBuilder<Products> entity)
+        public void Configure(EntityTypeBuilder<Product> entity)
         {
             entity.HasIndex(e => e.Name)
                    .HasName("UQ_NameCourses")

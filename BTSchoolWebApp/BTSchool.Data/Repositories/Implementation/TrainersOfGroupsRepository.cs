@@ -1,11 +1,12 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
+
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class TrainersOfGroupsRepository : Repository<TrainersOfCourses>, ITrainersOfGroupsRepository
+    internal class TrainersOfGroupsRepository : Repository<TrainerOfCourse>, ITrainersOfGroupsRepository
     {
-        public TrainersOfGroupsRepository(AppContext context)
+        public TrainersOfGroupsRepository(BTSDataContext context)
             : base(context)
         {
         }

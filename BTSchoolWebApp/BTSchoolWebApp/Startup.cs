@@ -5,11 +5,13 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 
-using BTSchool.Data;
 using BTSchool.Buisness.ServiceInterfaces;
 using BTSchool.Buisness.Services;
 using BTSchool.Data.Repositories;
+using BTSchool.Data;
 
 namespace BTSchool.WebApp
 {
@@ -31,10 +33,23 @@ namespace BTSchool.WebApp
                     , optionBuilder => optionBuilder.MigrationsAssembly("BTSchool.WebApp"));
             });
 
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new PathString("/Account/Login");
+                });
+
+            //services.AddAuthorization(opts => {
+            //    opts.AddPolicy("OnlyForMicrosoft", policy => {
+            //        policy.RequireClaim("company", "Microsoft");
+            //    });
+            //});
+
             services.AddMvc();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IAccountService, AccountService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +71,7 @@ namespace BTSchool.WebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

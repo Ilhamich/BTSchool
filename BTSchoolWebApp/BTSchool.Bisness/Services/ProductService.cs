@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 
 using BTSchool.Buisness.ServiceInterfaces;
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories;
 
 namespace BTSchool.Buisness.Services
@@ -14,7 +14,7 @@ namespace BTSchool.Buisness.Services
         public ProductService(IUnitOfWork unitOfWork)
             => _unitOfWork = unitOfWork;
         
-        public async Task<IList<Products>> GetAllProductsAsync() 
+        public async Task<IList<Product>> GetAllProductsAsync() 
             => await _unitOfWork.ProductRepository.GetAllAsync();      
     }
 }

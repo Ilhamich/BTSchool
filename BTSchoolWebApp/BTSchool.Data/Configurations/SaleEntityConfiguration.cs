@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class SaleEntityConfiguration : IEntityTypeConfiguration<Sales>
+    internal class SaleEntityConfiguration : IEntityTypeConfiguration<Sale>
     {
-        public void Configure(EntityTypeBuilder<Sales> entity) 
+        public void Configure(EntityTypeBuilder<Sale> entity) 
         {
             entity.Property(e => e.Data).HasColumnType("smalldatetime");
 

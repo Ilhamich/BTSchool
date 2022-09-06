@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class ThemeEntityConfiguration : IEntityTypeConfiguration<Themes>
+    internal class ThemeEntityConfiguration : IEntityTypeConfiguration<Theme>
     {
-        public void Configure(EntityTypeBuilder<Themes> entity) 
+        public void Configure(EntityTypeBuilder<Theme> entity) 
         {
             entity.HasIndex(e => e.Name)
                   .HasName("UQ_NameThemes")

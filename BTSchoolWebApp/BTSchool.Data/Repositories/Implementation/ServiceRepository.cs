@@ -1,11 +1,11 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class ServiceRepository : Repository<Services>, IServiceRepository
+    internal class ServiceRepository : Repository<Service>, IServiceRepository
     {
-        public ServiceRepository(AppContext context)
+        public ServiceRepository(BTSDataContext context)
             : base(context)
         {
         }

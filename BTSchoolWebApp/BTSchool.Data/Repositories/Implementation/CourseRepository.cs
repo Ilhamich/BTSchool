@@ -1,11 +1,11 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
 
 namespace BTSchool.Data.Repositories.Implementation
 {
-    internal class CourseRepository : Repository<Courses>, ICourseRepository
+    internal class CourseRepository : Repository<Course>, ICourseRepository
     {
-        public CourseRepository(AppContext context)
+        public CourseRepository(BTSDataContext context)
             : base(context)
         {
         }

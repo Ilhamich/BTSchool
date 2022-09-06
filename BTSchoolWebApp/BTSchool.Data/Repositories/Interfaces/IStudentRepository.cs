@@ -1,8 +1,8 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IStudentRepository : IRepository<Students>
+    public interface IStudentRepository : IRepository<Student>
     {
     }
 }

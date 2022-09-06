@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class LessonEntityConfiguration : IEntityTypeConfiguration<Lessons>
+    internal class LessonEntityConfiguration : IEntityTypeConfiguration<Lesson>
     {
-        public void Configure(EntityTypeBuilder<Lessons> entity) 
+        public void Configure(EntityTypeBuilder<Lesson> entity) 
         {
             entity.Property(e => e.Id).HasColumnName("ID");
 

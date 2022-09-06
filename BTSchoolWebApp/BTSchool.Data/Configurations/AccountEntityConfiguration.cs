@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    class AccountEntityConfiguration : IEntityTypeConfiguration<Accounts> 
+    class AccountEntityConfiguration : IEntityTypeConfiguration<Account> 
     {
-        public void Configure(EntityTypeBuilder<Accounts> entity) 
+        public void Configure(EntityTypeBuilder<Account> entity) 
         {
             entity.HasIndex(e => e.Email)
                    .HasName("UQ_EmailAccounts")

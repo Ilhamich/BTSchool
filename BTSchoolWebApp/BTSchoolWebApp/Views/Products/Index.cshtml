@@ -1,33 +1,27 @@
-﻿@model IList<Products>
+﻿@model IList<Product>
 
 @{
     ViewData["Title"] = "Home";
 }
-<div class="container-md">
-    <table class="table table-hover table-striped-columns">
-        <thead>
-            <tr class="table-primary">
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            @{
-                int lineNumber = 0;
+@{
+    Random rnd = new Random();
 
-                foreach (var item in Model)
-                {
-                    lineNumber++;
-                    <tr>
-                        <th>@lineNumber</th>
-                        <td>@item.Name</td>
-                        <td>@item.Price</td>
-                    </tr>
-                }
+    List<string> dogList = new List<string>
+    {
+       "bull-terrier.jpg",
+       "Franch.jpg",
+       "husky.jpg",
+       "Pug.jpg",
+       "Saluki.jpg"
+    };
+    <main>
+        <div class="data-list">
+            @foreach (var item in Model)
+            {
+                <div class="image-div" style="background-image: url(img/@dogList[rnd.Next(0,5)])">
+                </div>
             }
-        </tbody>
-    </table>
-</div>
-
+        </div>
+    </main>
+}
 @*<p>@ViewBag.IP</p>*@

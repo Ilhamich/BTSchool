@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class StudentEntityConfiguration : IEntityTypeConfiguration<Students>
+    internal class StudentEntityConfiguration : IEntityTypeConfiguration<Student>
     {
-        public void Configure(EntityTypeBuilder<Students> entity)
+        public void Configure(EntityTypeBuilder<Student> entity)
         {
             entity.HasIndex(e => e.AccountId)
                     .HasName("UQ_AccountStudents")
@@ -15,7 +15,7 @@ namespace BTSchool.Data.Configurations
 
             entity.HasOne(d => d.Account)
                 .WithOne(p => p.Students)
-                .HasForeignKey<Students>(d => d.AccountId)
+                .HasForeignKey<Student>(d => d.AccountId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_AccountStudents");
         }

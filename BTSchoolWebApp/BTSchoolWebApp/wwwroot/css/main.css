@@ -1,0 +1,194 @@
+:root {
+    --active-color: #924F55;
+    --active-hover-color: #A96066;
+    --main-color: #2E3B49;
+    --secondary-color: #F2EFE9;
+    --secondary-hover-color: #E8E3D8;
+}
+
+@font-face {
+    font-family: LibreBaskerville;
+    src: url('fonts/LibreBaskerville-Regular.ttf');
+}
+
+@font-face {
+    font-family: LibreBaskerville;
+    font-style: italic;
+    src: url('fonts/LibreBaskerville-Italic.ttf');
+}
+
+@font-face {
+    font-family: LibreBaskerville;
+    font-weight: bold;
+    src: url('fonts/LibreBaskerville-Bold.ttf');
+}
+
+body {
+    background-color: var(--secondary-color);
+    margin: 0;
+    font-family: LibreBaskerville, serif;
+}
+
+header {
+    width: 100%;
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    min-height: 70px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin: 0;
+    padding-left: 5px;
+    font-size: xx-large;
+}
+
+    h2 span {
+        color: var(--active-color);
+    }
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    font-size: 22px;
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+    a:hover {
+        color: var(--active-color);
+    }
+
+.error {
+    border-color: red;
+    color: red;
+}
+
+.header-nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--secondary-color);
+    padding-bottom: 3px;
+}
+
+    .header-nav-bar div {
+        display: flex;
+        flex-direction: row;
+        font-size: 22px;
+    }
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin: 0;
+    border-right: 1px solid var(--secondary-color);
+}
+
+    .nav-list li {
+        list-style-type: none;
+        padding-right: inherit;
+        padding-left: inherit;
+    }
+
+.image-div {
+    background-size: cover;
+}
+
+.data-list {
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+}
+
+    .data-list div {
+        width: 20%;
+        height: 200px;
+    }
+
+        .data-list div:hover {
+            background-color: var(--active-color);
+            opacity: 0.7;
+        }
+
+.loginMain {
+    flex-direction: column;
+}
+
+    .loginMain h2 {
+        color: var(--active-color);
+        align-self:center;
+    }
+
+    .loginMain div {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--main-color);
+        border-radius: 5px;
+        width: 30rem;
+        margin: 10rem auto auto;
+    }
+
+        .loginMain div div {
+            width: 80%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+
+form div input {
+    border-radius: 5px;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+}
+
+    .loginForm div {
+        display: flex;
+        color: var(--secondary-color);
+        font-size: 22px;
+        text-align: center;
+        width: 80%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+        .loginForm div input {
+            height: 2rem;
+        }
+
+.action-btn {
+    background-color: var(--active-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: inherit;
+}
+
+    .action-btn:hover {
+        background-color: var(--active-hover-color);
+        color: var(--secondary-color);
+    }
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+    color: var(--active-color);
+    border: 1px solid var(--active-color);
+    text-align: center;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+    .secondary-btn:hover {
+        background-color: var(--secondary-hover-color);
+        color: var(--active-color);
+    }

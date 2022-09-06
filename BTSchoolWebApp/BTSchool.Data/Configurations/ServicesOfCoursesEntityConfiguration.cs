@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-using BTSchool.Data.Entities;
+using BTSchool.Core.Entities;
 
 namespace BTSchool.Data.Configurations
 {
-    internal class ServicesOfCoursesEntityConfiguration : IEntityTypeConfiguration<ServicesOfCourses>
+    internal class ServicesOfCoursesEntityConfiguration : IEntityTypeConfiguration<ServiceOfCourse>
     {
-        public void Configure(EntityTypeBuilder<ServicesOfCourses> entity) 
+        public void Configure(EntityTypeBuilder<ServiceOfCourse> entity) 
         {
             entity.HasIndex(e => new { e.CourseId, e.ServiceId })
                     .HasName("UQ_MasterAndService")

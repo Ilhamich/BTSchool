@@ -1,8 +1,14 @@
-﻿using BTSchool.Data.Entities;
+﻿using BTSchool.Core.BindingModels;
+
+using BTSchool.Core.Entities;
+using System.Threading.Tasks;
 
 namespace BTSchool.Data.Repositories.Interfaces
 {
-    public interface IAccountRepository : IRepository<Accounts>
+    public interface IAccountRepository : IRepository<Account>
     {
+        Task<Account> GetAccountByCredentialsAsync(AccountCredential login);
+
+        Task<bool> IsAccountExist(string email);
     }
 }

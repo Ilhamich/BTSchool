@@ -1,15 +1,33 @@
-﻿@model BTSchool.Core.DTOs.LoginModel;
+﻿@model BTSchool.Core.BindingModels.AccountCredential;
 
-<form asp-controller="Account" asp-action="Login" id="loginForm">
+@{
+    ViewData["Title"] = "Login";
+}
+
+@{
+    Layout = "_LoginLayout";
+}
+
+<main class="loginMain">
+    <h2>Login</h2>
     <div>
-        <label asp-for="Email"></label>
-        <input type="text" asp-for="Email" />
+        <form asp-controller="Account" asp-action="Login" asp-antiforgery="true" class="loginForm">
+            <div>
+                <label asp-for="Email"></label>
+                <input type="text" asp-for="Email" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+            </div>
+            <div>
+                <button type="submit" class="action-btn">Login</button>
+            </div>
+        </form>
+        <div>
+            <a asp-controller="Account" asp-action="Register" class="secondary-btn">Register</a>
+        </div>
     </div>
-    <div>
-        <label asp-for="Password"></label>
-        <input asp-for="Password" />
-    </div>
-    <div>
-        <input type="submit" value="Login"/>
-    </div>
-</form>
+</main>
+
+

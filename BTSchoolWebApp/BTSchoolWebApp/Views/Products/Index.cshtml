@@ -1,4 +1,4 @@
-﻿@model IList<Products>
+﻿@model IList<Product>
 
 @{
     ViewData["Title"] = "Home";
@@ -14,13 +14,14 @@
        "Pug.jpg",
        "Saluki.jpg"
     };
-
-    <div id="dataList">
-        foreach (var item in Model)
-        {
-        <div style="background-image: url(img/@dogList[rnd.Next(0,5)]); background-size:cover">
+    <main>
+        <div class="data-list">
+            @foreach (var item in Model)
+            {
+                <div class="image-div" style="background-image: url(img/@dogList[rnd.Next(0,5)])">
+                </div>
+            }
         </div>
-        }
-    </div>
+    </main>
 }
 @*<p>@ViewBag.IP</p>*@

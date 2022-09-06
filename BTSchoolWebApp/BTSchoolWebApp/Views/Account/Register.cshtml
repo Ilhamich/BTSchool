@@ -1,0 +1,53 @@
+﻿@model BTSchool.Core.BindingModels.AccountRegister
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+@{
+    Layout = "_LoginLayout";
+}
+
+<main class="loginMain">
+    <h2>Registration</h2>
+    <div>
+        <form asp-controller="Account" asp-action="Register" asp-antiforgery="true" class="loginForm" name="regForm">
+            <div>
+                <label asp-for="Name"></label>
+                <input type="text" asp-for="Name" />
+            </div>
+            <div>
+                <label asp-for="Surname"></label>
+                <input type="text" asp-for="Surname" />
+            </div>
+            <div>
+                <label asp-for="Email"></label>
+                <input type="text" asp-for="Email" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" name="password" />
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" name="confirmPassword" />
+            </div>
+            <div>
+                <button type="submit" class="action-btn" name="regSubmit">Register</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<script>
+    const form = document.forms.regForm;
+
+    form.addEventListener("submit", function(event) {
+        if (form.password.value != form.confirmPassword.value) {
+            event.preventDefault();
+
+            form.confirmPassword.setCustomValidity("Password isn't equal confirm password");
+            form.confirmPassword.classList.add("error");
+        }
+    })
+</script>

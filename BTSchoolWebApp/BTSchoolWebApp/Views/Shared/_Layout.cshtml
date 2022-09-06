@@ -12,12 +12,12 @@
 
 <body>
     <header>
-        <div class="headerNavBar">
+        <div class="header-nav-bar">
             <h2>
                 <span>BT</span>School
             </h2>
             <div>
-                <ul class="navList">
+                <ul class="nav-list">
                     <li>
                         <a asp-controller="Home" asp-action="Index">Home</a>
                     </li>
@@ -32,13 +32,18 @@
                     </li>
                 </ul>
 
-                <a asp-controller="Account" asp-action="Login" id="login">Login</a>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <a asp-controller="Account" asp-action="Logout" class="action-btn">Logout</a>
+                }
+                else
+                {
+                    <a asp-controller="Account" asp-action="Login" class="action-btn">Login</a>
+                }
             </div>
         </div>
     </header>
-    <main>
         @RenderBody()
-    </main>
     <script src="js/main.js"></script>
 </body>
 

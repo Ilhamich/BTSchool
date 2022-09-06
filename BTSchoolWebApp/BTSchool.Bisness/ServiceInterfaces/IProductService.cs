@@ -7,6 +7,6 @@ namespace BTSchool.Buisness.ServiceInterfaces
 {
     public interface IProductService
     {
-        Task<IList<Products>> GetAllProductsAsync();
+        Task<IList<Product>> GetAllProductsAsync();
     }
 }

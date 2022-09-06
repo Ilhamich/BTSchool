@@ -6,7 +6,7 @@ namespace BTSchool.Core.Entities
 {
     public partial class Account : BaseEntity
     {
-        public UserRole? Role { get; set; } //= UserRole.NotAssigned
+        public UserRole? Role { get; set; } = UserRole.NotAssigned;
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }

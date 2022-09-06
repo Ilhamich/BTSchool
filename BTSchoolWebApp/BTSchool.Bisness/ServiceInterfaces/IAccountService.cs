@@ -7,6 +7,6 @@ namespace BTSchool.Buisness.ServiceInterfaces
 {
     public interface IAccountService
     {
-        Task<Accounts> GetAccount(LoginModel accountLogin);
+        Task<Account> GetAccountByCredentialsAsync(AccountCredential accountLogin);
     }
 }

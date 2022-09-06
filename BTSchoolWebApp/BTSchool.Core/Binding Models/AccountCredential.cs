@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BTSchool.Core.DTOs
+namespace BTSchool.Core.BindingModels
 {
     public class AccountCredential
     {
-        [Required(ErrorMessage = "Не указан Email")]
+        [Required(ErrorMessage = "Email isn't specified")]
         public string Email { get; set; }
 
-        [Required(ErrorMessage = "Не указан пароль")]
+        [Required(ErrorMessage = "Password isn't specified")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
     }

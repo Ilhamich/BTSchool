@@ -53,19 +53,32 @@ CREATE TABLE Customers(
     CONSTRAINT    UQ_AccountCustomers     UNIQUE (AccountId)
    );  
 
--- Table Products
-DROP TABLE IF EXISTS Products;
+   -- Table SalesObjectType
+DROP TABLE IF EXISTS SalesObjectType;
 
-CREATE TABLE Products(
+CREATE TABLE SalesObjectType(
+   Id                 INT IDENTITY(1, 1)    NOT NULL,
+   Name               NVARCHAR(100)         NOT NULL,
+
+   CONSTRAINT PK_SalesObject_Type_Id                PRIMARY KEY (Id),
+   CONSTRAINT UQ_Name_Of_SalesObject_Type           UNIQUE (Name)
+   );
+
+-- Table SalesObject
+DROP TABLE IF EXISTS SalesObject;
+
+CREATE TABLE SalesObject(
 	Id                BIGINT IDENTITY(1, 1)    NOT NULL,
-	ProductType       NVARCHAR(30)             NULL,
-	Brend             NVARCHAR(30)             NULL,
+	SOTypeId          INT                      NULL,
+	SOEntityId        BIGINT                   NOT NULL,
 	Name              NVARCHAR(100)            NOT NULL,
 	Price             SMALLMONEY               NOT NULL,
 	Description       NVARCHAR(30)             NULL,
 
-    CONSTRAINT PK_Product_Id                PRIMARY KEY (Id),
-	CONSTRAINT UQ_NameProduct               UNIQUE (Name)
+    CONSTRAINT PK_SO_Id                     PRIMARY KEY (Id),
+	CONSTRAINT FK_SO_Type                   FOREIGN KEY (SOTypeId)    REFERENCES SalesObjectType (Id),
+	CONSTRAINT UQ_NameSO                    UNIQUE (Name),
+    CONSTRAINT UQ_Entity_Id_SO_Type_Id      UNIQUE (SOTypeId, SOEntityId)
 	);
 
 -- Table Sales
@@ -75,11 +88,11 @@ CREATE TABLE Sales(
     Id                BIGINT IDENTITY(1, 1)    NOT NULL,
 	Data			  SMALLDATETIME            NOT NULL,
 	CustomerId        BIGINT                   NOT NULL,
-	ProductId         BIGINT                   NOT NULL
+	SO_Id             BIGINT                   NOT NULL
 
 	CONSTRAINT PK_Sale_Id                PRIMARY KEY (Id),
 	CONSTRAINT FK_Sale_Customer_Id       FOREIGN KEY (CustomerId)           REFERENCES Customers (Id),
-	CONSTRAINT FK_Sale_Product_Id        FOREIGN KEY (ProductId)            REFERENCES Products (Id)
+	CONSTRAINT FK_Sale_SO_Id             FOREIGN KEY (SO_Id)            REFERENCES SalesObject (Id)
 	);
 
 -- Table Masters
@@ -107,16 +120,27 @@ CREATE TABLE Students (
     CONSTRAINT    UQ_AccountStudents    UNIQUE (AccountId)
 );
 
+-- Table Products
+DROP TABLE IF EXISTS Products;
+
+CREATE TABLE Products
+(
+	Id						BIGINT IDENTITY,
+	Brend             NVARCHAR(30)             NULL,
+	HasExpirationDate		BIT,
+	ExpirationDate          DATE,
+
+	CONSTRAINT		PK_Product_Id		PRIMARY KEY (Id)
+);
+
 -- Table Services
 DROP TABLE IF EXISTS Services;
 
 CREATE TABLE Services
 (
     Id                     BIGINT IDENTITY,
-	Name                   NVARCHAR(100),
 	ServiceLevel		   TINYINT,
     Time				   TIME,
-	Price				   SMALLMONEY
 
 	CONSTRAINT    PK_Service            PRIMARY KEY (Id),
 );
@@ -125,12 +149,11 @@ CREATE TABLE Services
 DROP TABLE IF EXISTS Courses;
 
 CREATE TABLE Courses (
-    ID          BIGINT IDENTITY(1, 1)    NOT NULL,
-    IsActive    BIT                      DEFAULT 1,
-	ProductId   BIGINT                   NOT NULL
+    ID              BIGINT IDENTITY(1, 1)    NOT NULL,
+    IsActive        BIT                      DEFAULT 1,
+	IsIndividual    BIT                      DEFAULT 0,
 
     CONSTRAINT    PK_Course                 PRIMARY KEY (ID),
-    CONSTRAINT    FK_Product_Course_Id           FOREIGN KEY (ProductId)          REFERENCES Products (Id)
 );
 
 -- Table TrainersOfCourses

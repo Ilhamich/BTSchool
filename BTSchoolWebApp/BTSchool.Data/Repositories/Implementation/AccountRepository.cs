@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
-using BTSchool.Core.DTOs;
+using BTSchool.Core.BindingModels;
 using BTSchool.Core.Entities;
 using BTSchool.Data.Repositories.Interfaces;
 

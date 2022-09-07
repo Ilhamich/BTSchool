@@ -11,17 +11,19 @@ namespace BTSchool.Data.Configurations
         {
             entity.Property(e => e.Data).HasColumnType("smalldatetime");
 
+            entity.Property(e => e.SoId).HasColumnName("SO_Id");
+
             entity.HasOne(d => d.Customer)
                 .WithMany(p => p.Sales)
                 .HasForeignKey(d => d.CustomerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Sale_Customer_Id");
 
-            entity.HasOne(d => d.Product)
+            entity.HasOne(d => d.So)
                 .WithMany(p => p.Sales)
-                .HasForeignKey(d => d.ProductId)
+                .HasForeignKey(d => d.SoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Sale_Product_Id");
+                .HasConstraintName("FK_Sale_SO_Id");
         }
     }
 }

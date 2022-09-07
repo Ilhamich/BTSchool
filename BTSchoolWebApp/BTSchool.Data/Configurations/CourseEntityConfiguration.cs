@@ -13,11 +13,7 @@ namespace BTSchool.Data.Configurations
 
             entity.Property(e => e.IsActive).HasDefaultValueSql("((1))");
 
-            entity.HasOne(d => d.Product)
-                .WithMany(p => p.Courses)
-                .HasForeignKey(d => d.ProductId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK_Product_Course_Id");
+            entity.Property(e => e.IsIndividual).HasDefaultValueSql("((0))");
         }
     }
 }

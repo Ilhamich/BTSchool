@@ -12,10 +12,8 @@ namespace BTSchool.Core.Entities
             ServicesOfCourses = new HashSet<ServiceOfCourse>();
         }
 
-        public string Name { get; set; }
         public ServiceLevel? ServiceLevel { get; set; }
         public TimeSpan? Time { get; set; }
-        public decimal? Price { get; set; }
 
         public virtual ICollection<ServiceOfCourse> ServicesOfCourses { get; set; }
     }

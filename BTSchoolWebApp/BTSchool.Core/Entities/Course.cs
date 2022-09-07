@@ -12,9 +12,8 @@ namespace BTSchool.Core.Entities
         }
 
         public bool? IsActive { get; set; }
-        public long ProductId { get; set; }
+        public bool? IsIndividual { get; set; }
 
-        public virtual Product Product { get; set; }
         public virtual ICollection<Group> Groups { get; set; }
         public virtual ICollection<ServiceOfCourse> ServicesOfCourses { get; set; }
         public virtual ICollection<TrainerOfCourse> TrainersOfCourses { get; set; }
